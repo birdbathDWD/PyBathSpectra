@@ -1,0 +1,148 @@
+## Settings for spectral postprocessing of DWD birdbath scans (2024)
+# to start postprocessing with these settings, run: python3 postprocessing.py
+
+
+##### Input file(s)
+
+# Selected time of birdbath scan (= timestamp in filename)
+# Format: 'yyyy-mm-dd HH:MM:SS'
+birdbath_time:
+- '2021-04-30 15:09:41'
+#- '2021-06-29 14:06:20'
+#- '2020-01-18 00:25:02'
+#- '2023-06-22 14:00:00'
+
+# Data directory
+# Relative path from where postprocessing.py is executed
+data_dir: './input/'
+
+# Filename pattern for DWD birdbath scan Doppler spectra and moments
+birdbath_pattern:
+  # For research radar MHP
+  birdbath_spectra: 'dft-Sc+90Grad-STAR-NG-10+MHP_10962_%Y%m%d%H%M%S_00.00.h5'
+  birdbath_moments: 'Sc+90Grad-STAR-NG-10+MHP_10962_%Y%m%d%H%M%S_00.h5'
+  # # Alternative pattern for research radar MHP
+  # birdbath_spectra: 'dft-Sc+M1ds-90Grad-STAR-NG-02+MHP_10962_%Y%m%d%H%M%S_00.00.h5'
+  # birdbath_moments: 'Sc+M1ds-90Grad-STAR-NG-02+MHP_10962_%Y%m%d%H%M%S_00.h5'
+  # # For operational radar FLD (ras13 instead of ras11 starting from summer 2023???)
+  # birdbath_spectra: 'ras20-90gradstarng10dft_sweepdft_dfthv_00-%Y%m%d%H%M%S-REPLdefld-10440-hd5'
+  # birdbath_moments: 'ras13-90gradstarng10_sweeph5allm_any_00-%Y%m%d%H%M%S-REPLdefld-10440-hd5'
+
+
+##### Thresholding
+
+# Thresholding method for separating weather signal from clutter and background
+# 'adaptive' thresholding by hdbscan clustering, 'fixed' preset thresholds,
+# or 'none_expanded' for no thresholding but expands Doppler velocity range 
+# for manual dealiasing later on (then use mask below)
+thresholding: 'none_expanded'
+
+# Threshold values for 'fixed' threholding method
+# (not used for 'adaptive' or 'none_expanded')
+fixed_thresholds:
+  # Absolute difference in Doppler power between H and V channel [dB]
+  power_difference: 1.256  # 1.4
+  # Variability of power_difference per Doppler velocity and range bin [dB]
+  power_variability: 1.169  # 1.4
+  # Lowest maximum power value for (contiguous) weather signal [dB]
+  power_minimum: 58.76  # 60.0
+
+# Relevant for 'none_expanded' only: expand and cut Doppler spectra
+# (e.g. for manual dealiasing in strong convection, i.e. hail)
+# Parameters for cutting/masking spurious data in expanded Doppler spectra
+# have to be determined by trial and error
+mask:
+  # Mask 'h(v)' is cut along the lines of height = a * velocity + b;
+  # 'v(h)' is cut along lines of velocity = a * height + b
+  mask_flavor: 'h(v)'
+  # Parameters [a, b] for masked areas below and above ('h(v)')
+  # or to right and left ('v(h)') of reasonable weather signal
+  mask_up: [0.38, 0.5]
+  mask_down: [0.38, 11]
+
+
+##### Peak finding
+
+# Find peak intervals for Doppler spectra on linear or dB scale:
+# 'linear' or 'dBlin'
+# best to use 'dBlin': find peaks on dB scale but still calculate
+# Doppler moments on linear power scale
+power_mode: 'dBlin'
+
+# Method for finding peaks in Doppler spectra at every height level
+# use 'adaptive' for UniDip clustering (only useful for narrow spectra
+# i.e. in snow and not in intense (convective) rain or even hail) or
+# use 'fixed' threshold value for defining required peak prominence (robust)
+peak_finder: 'fixed'
+
+# Peak prominence [dB] for identifying multiple peaks in Doppler spectra
+# only relevant for 'fixed' peak_finder with
+# reasonable values of 6 to 8 for hail, and generally 8
+peak_to_trough: 8
+
+
+##### Plotting and outputs
+
+# Plot radar data and postprocessing results?
+plot_all: True
+
+# Save postprocessing results as .txt files?
+save_results: True
+
+# Directory where to save output plots
+# Relative path from where postprocessing.py is executed
+plot_dir: './output/plots/'
+
+# Directory where to save results as .txt files
+# Relative path from where postprocessing.py is executed
+results_dir: './output/results/'
+
+# Scaling factors for Pseudo-RGB plots of birdbath scan data
+# R: h-pol power, G: h-v power difference, B: h-v variability
+rgb_scaling: [1, 1.8, 1.8]
+
+# Expected maximum number of modes in birdbath Doppler spectra
+# Generally a value of 10 is high enough, or 20 in convection
+# if more spectral modes are seemingly found, the analysis results are
+# super noisy or analysis can crash altogether
+maximum_modes: 20
+
+# Also provide simple uncertainty estimates of results?
+# Difference between postprocessing for smoothed and unsmoothed spectra
+estimate_uncertainty: True
+
+# Also give full spectrally resolved reflectivities as output?
+# results in large .txt files; not used for this publication
+reflectivity_spectra: False
+
+
+##### Miscellaneous
+
+# Lowest valid range bin, i.e. minimum height [m] above radar, for analysis
+# (i.e. start of radar far field, depending on analysis, radar, and weather)
+# good values: generally 625 m; for hail often already 425 m
+analysis_minheight: 425
+
+# Maximum height for analysis [m];
+# saves time if only shallow region is of interest
+analysis_maxheight: 9000
+
+# Use interpolated spectra or simply masked mean of measured spectra
+# as output for isolated spectra
+# if set to 'True': can recover weather signal across clutter region,
+# but can also introduce grainy artifacts
+# Not relevant for 'thresholding' of 'none_expanded'.
+interpolate_isolated: True
+
+# Minimum pixel area for individual region(s) of interest [px]
+# Null (-> Python NoneType) = largest only; everything else not used, so far
+dfth_minarea: Null
+
+# Number of (height, velocity) bins for structuring element
+# used for spectral filtering and interpolation
+structuring_element: [3, 7]
+
+# Reflectivity scale
+# Use either 'Zh' (mostly) or 'UZh' (hail) to transform power to reflectivity
+# UZh has fewer missing values (Zh is more thresholded in signal processor)
+reflectivity_scale: 'UZh'
