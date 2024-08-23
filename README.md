@@ -10,7 +10,7 @@ Experimental code. Flexibility is king (or queen). Best to download full *PyBath
 
 Exact version numbers of the Python packages used for the development of `pybathspectra` functionality are listed in `setup.py`. Other versions, especially much newer versions, can cause many compatibility issues, particularly due to the many changes in `NumPy` and `pandas` between different versions. Therefore, it may be best to create a virtual environment with the exact versions of Python packages listed in 'setup.py' and then run the *PyBathSpectra* postprocessing analysis inside this Python environment. 
 ### Installation
-`pybathspectra` package can be installed manually after downloading *PyBathSpectra* repository by executing `python setup.py install`, but to preserve flexibility and avoid (some) compatibility issues, it is best to run postprocessing routine with desired settings directly in downloaded repository structure, i.e., without prior installation of Python package.
+The `pybathspectra` Python package can be installed manually after downloading the *PyBathSpectra* repository by executing `python setup.py install`, but to preserve flexibility and avoid (some) compatibility issues, it is best to run the postprocessing routine with desired settings directly in the downloaded repository structure, i.e., without prior installation of the Python package.
 ## Usage
 4 birdbath-scan examples (2x snow and 2x hail) are included in *PyBathSpectra*. The settings for processing the given input files and producing the corresponding outputs are listed in the `postprocessing_config_....yaml` files. To run one of these examples, the settings filename has to be modified accordingly in line 36 of `postprocessing.py`.    
 ## Citing the code
