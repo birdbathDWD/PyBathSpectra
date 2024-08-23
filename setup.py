@@ -45,7 +45,7 @@ setup(
     ],
     author='Mathias Gergely',
     author_email='Mathias.Gergely@dwd.de',
-    url='https://github.com/PyBathSpectra',
+    url='https://github.com/birdbathDWD/PyBathSpectra',
     packages=find_packages(include=['pybathspectra', 'pybathspectra.*']),
     license='MIT',
     keywords='radar, postprocessing, Doppler, multimodality',
