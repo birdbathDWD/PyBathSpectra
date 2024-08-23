@@ -12,7 +12,7 @@ Exact version numbers of the Python packages used for the development of `pybath
 ### Installation
 `pybathspectra` package can be installed manually after downloading *PyBathSpectra* repository by executing `python setup.py install`, but to preserve flexibility and avoid (some) compatibility issues, it is best to run postprocessing routine with desired settings directly in downloaded repository structure, i.e., without prior installation of Python package.
 ## Usage
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+4 birdbath-scan examples (2x snow and 2x hail) are included in *PyBathSpectra*. The settings for processing the given input files and producing the corresponding outputs are listed as `postprocessing_config_....yaml`. To run one of these examples, the settings filename has to be modified accordingly in line 36 of `postprocessing.py`.    
 ## Citing the code
 Gergely, M., Schaper, M., Toussaint, M., and Frech, M., 2022: Doppler spectra from DWD’s operational C-band radar birdbath scan: sampling strategy, spectral postprocessing, and multimodal analysis for the retrieval of precipitation processes, *Atmos. Meas. Tech.*, 15, 7315–7335, https://doi.org/10.5194/amt-15-7315-2022
 
