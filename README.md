@@ -14,4 +14,4 @@ Gergely, M., Schaper, M., Toussaint, M., and Frech, M., 2022: Doppler spectra fr
 Gergely, M., Ockenfuß, P., Kneifel, S., Frech, M., 2024: Postprocessing methods to characterize multimodal precipitation in Doppler spectra from DWD's C-band radar birdbath scan, *ERAD 2024 – 12th European Conference on Radar in Meteorology and Hydrology*, 9–13 September 2024, Rome, Italy. Extended Abstract: LINK_GOES_HERE
 ## References
 ## Acknowledegments
-The work is supported by the German Research Foundation (DFG) 'PROM' priority program SPP-2115 and by the German Meteorological Service(Deutscher Wetterdienst, DWD); https://www2.meteo.uni-bonn.de/spp2115  https://www.dwd.de/DE/Home/home_node.html
+The work is supported by the German Research Foundation (DFG) 'PROM' priority program SPP-2115 (https://www2.meteo.uni-bonn.de/spp2115) and by the German Meteorological Service (Deutscher Wetterdienst, DWD, https://www.dwd.de/DE/Home/home_node.html).
