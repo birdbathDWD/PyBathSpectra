@@ -6,7 +6,11 @@ All postprocessing methods are included in the `pybathspectra` package. The post
 ### License
 Distributed under the MIT License. See `LICENSE` for more information.
 ## Getting started
+Experimental code. Flexibility is king (or queen). Best to download full *PyBathSpectra* repository to local disk and run all postprocessing analysis inside this directory.
+
+Exact version numbers of the Python packages used for the development of `pybathspectra` functionality are listed in `setup.py`. Other versions, especially much newer versions, can cause many compatibility issues, particularly due to many changes in `NumPy` and `pandas` between different versions. Therefore, it may be best to create a virtual environment with the exact versions of Python packages listed in 'setup.py' and then run the PyBathSpectra postprocessing analysis in this environment. 
 ### Installation
+`pybathspectra` package can be installed manually after downloading *PyBathSpectra* repository by executing `python setup.py install`, but to preserve flexibility and avoid (some) compatibility issues, it is best to run postprocessing with desired settings directly in downloaded repository structure, i.e., without prior installation of Python package.
 ## Usage
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 ## Citing the code
