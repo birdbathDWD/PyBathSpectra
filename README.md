@@ -1,6 +1,6 @@
 ## About PyBathSpectra
 ### Contents
-The *PyBathSpectra* repository contains Python code and example files for multimodal postprocessing of Doppler spectra recorded with DWD's operational German C-band radar (vertically pointing) birdbath scan, as described by Gergely et al. (2022, 2024).
+The *PyBathSpectra* repository contains Python code and example files for multimodal postprocessing of Doppler spectra recorded with DWD's operational C-band radar (vertically pointing) birdbath scan, as described by Gergely et al. (2022, 2024).
 
 All postprocessing methods are included in the `pybathspectra` package. The postprocessing routine for a birdbath scan can be executed by running `postprocessing.py` with the desired postprocessing settings that are specified in `postprocessing_config.yaml`. The `input` folder is a collection of birdbath-scan example data; the `output` folder collects all numerical results and plots for visualizing the different steps of the postprocessing chain.  
 ### License
