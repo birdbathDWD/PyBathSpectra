@@ -33,7 +33,7 @@ from pybathspectra.birdbathscan import BirdBathScan
 # Find directory of this postprocessing.py script
 this_directory = os.path.dirname(os.path.abspath(__file__))
 # Path to config file containing the settings for postprocessing routine
-settings_file = os.path.join(this_directory, 'postprocessing_config_SnowExample2.yaml')
+settings_file = os.path.join(this_directory, 'postprocessing_config.yaml')
 
 
 ###########################################################################
