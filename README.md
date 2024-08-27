@@ -4,7 +4,7 @@ The *PyBathSpectra* repository contains Python code and example files for multim
 ### License
 Distributed under the MIT License. See `LICENSE` for more information.
 ## Getting started
-Experimental code. Flexibility is king (or queen). Best to download full *PyBathSpectra* repository and run all postprocessing analysis from this directory, **without installing** 'pybathspectra' functionality locally.
+Experimental code. Flexibility is king (or queen). Best to download full *PyBathSpectra* repository (latest release), unzip, and run all postprocessing analysis from this directory, **without installing** 'pybathspectra' functionality locally.
 
 Exact version numbers of the Python packages used for developing `pybathspectra` modules are listed in `setup.py`. Other versions, especially much newer versions, can (and will) cause compatibility issues, particularly due to the many changes in `NumPy` and `pandas` between different version numbers. Therefore, it may be best to create a virtual environment with the exact versions of Python packages listed in 'setup.py' and then run the *PyBathSpectra* postprocessing analysis inside this Python environment. 
 ### Installation
