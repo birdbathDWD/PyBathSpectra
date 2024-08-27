@@ -8,7 +8,7 @@ Experimental code. Flexibility is king (or queen). Best to download full *PyBath
 
 Exact version numbers of the Python packages used for developing `pybathspectra` modules are listed in `setup.py`. Other versions, especially much newer versions, can (and will) cause compatibility issues, particularly due to the many changes in `NumPy` and `pandas` between different version numbers. Therefore, it may be best to create a virtual environment with the exact versions of Python packages listed in 'setup.py' and then run the *PyBathSpectra* postprocessing analysis inside this Python environment. 
 ### Installation
-The `pybathspectra` Python package can be installed manually after downloading the *PyBathSpectra* repository by running e.g. `pip install .`. But to preserve flexibility and avoid (some) compatibility issues, it is best to run the postprocessing routine directly in the downloaded repository structure, i.e., without prior installation of the Python package.
+The `pybathspectra` Python package can be installed manually after downloading the *PyBathSpectra* repository by running e.g. `pip install&#160;.`. But to preserve flexibility and avoid (some) compatibility issues, it is best to run the postprocessing routine directly in the downloaded repository structure, i.e., without prior installation of the Python package.
 ## Usage
 All postprocessing methods are collected in the `pybathspectra` folder. The postprocessing routine can be executed by running `postprocessing.py` with the desired postprocessing settings selected in `postprocessing_config.yaml`. The `input` folder is a collection of birdbath-scan example data; the `output` folder collects all numerical results as well as plots for visualizing the postprocessing steps.
 
