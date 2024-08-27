@@ -12,7 +12,7 @@ The `pybathspectra` Python package can be installed manually after downloading t
 ## Usage
 All postprocessing methods are collected in the `pybathspectra` folder. The postprocessing routine can be executed by running `postprocessing.py` with the desired postprocessing settings selected in `postprocessing_config.yaml`. The `input` folder is a collection of birdbath-scan example data; the `output` folder collects all numerical results as well as plots for visualizing the postprocessing steps.
 
-4 birdbath-scan examples (2x snow and 2x hail) are included in `input`. The settings for processing the given input files and producing the corresponding outputs are listed in the `postprocessing_config_....yaml` files. To run one of these examples, the 'settings_file' has to be modified accordingly in line 36 of `postprocessing.py`.    
+4 birdbath-scan examples (2x snow and 2x hail) are included as `input`. The settings for processing the given input files and producing the corresponding outputs are listed in the `postprocessing_config_....yaml` files. To run one of these examples, the 'settings_file' has to be modified accordingly in line 36 of `postprocessing.py`.    
 ## Citing the code
 Gergely, M., Schaper, M., Toussaint, M., and Frech, M., 2022: Doppler spectra from DWD’s operational C-band radar birdbath scan: sampling strategy, spectral postprocessing, and multimodal analysis for the retrieval of precipitation processes, *Atmos. Meas. Tech.*, 15, 7315–7335, https://doi.org/10.5194/amt-15-7315-2022
 
