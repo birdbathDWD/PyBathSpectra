@@ -30,7 +30,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='PyBathSpectra',
-    version='0.1.0',
+    version='0.1.2',
     description='Spectral postprocessing of DWD radar birdbath scans',
     long_description=long_description,
     # Content types: text/plain, text/x-rst, and text/markdown
