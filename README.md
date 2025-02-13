@@ -16,7 +16,7 @@ All postprocessing methods are collected in the `pybathspectra` folder. The post
 ## Citing the code
 Gergely, M., Schaper, M., Toussaint, M., and Frech, M., 2022: Doppler spectra from DWD’s operational C-band radar birdbath scan: sampling strategy, spectral postprocessing, and multimodal analysis for the retrieval of precipitation processes, *Atmos. Meas. Tech.*, 15, 7315–7335, https://doi.org/10.5194/amt-15-7315-2022
 
-Gergely, M., Ockenfuß, P., Kneifel, S., Frech, M., 2024: Postprocessing methods to characterize multimodal precipitation in Doppler spectra from DWD's C-band radar birdbath scan, *ERAD 2024 – 12th European Conference on Radar in Meteorology and Hydrology*, 9–13 September 2024, Rome, Italy. Extended Abstract: LINK_GOES_HERE
+Gergely, M., Ockenfuß, P., Kneifel, S., and Frech, M., 2024: Postprocessing methods to characterize multimodal precipitation in Doppler spectra from DWD’s C-band radar birdbath scan. *12th European conference on RADar in meteorology and hydrology (ERAD 2024). Book of Extended Abstracts*, L. Baldini, M. Montopoli, E. Adirosi, A. Bracci, F. Napolitano, and N. Pierdicca, Eds., Citta Universitaria Sapienza University of Rome, Rome, Italy, 62–66, https://doi.org/10.5281/zenodo.14170845.
 ## Acknowledegments
 The work is supported by the German Research Foundation (DFG) 'PROM' priority program SPP-2115 (https://www2.meteo.uni-bonn.de/spp2115) and the German Meteorological Service (Deutscher Wetterdienst, DWD, https://www.dwd.de/DE/Home/home_node.html).
 <!-- ## References -->
